@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exe4j version="6.0.1" transformSequenceNumber="2">
   <directoryPresets config="D:/Lichee/Desktop/releases" />
-  <application name="Startup" distributionSourceDir="D:/Lichee/Desktop/releases">
+  <application name="Startup" distributionSourceDir="D:/Lichee/Desktop">
     <languages>
       <principalLanguage id="en" customLocalizationFile="" />
     </languages>
   </application>
-  <executable name="Startup" type="2" iconSet="true" iconFile="D:/Lichee/Desktop/releases/favicon.ico" executableDir="." redirectStderr="false" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="2" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true" dpiAware="true" amd64="true">
+  <executable name="kkth-startup" type="2" iconSet="true" iconFile="C:/Lichee/Develop/workspace/IdeaProjects/kkth-web/exe/favicon.ico" executableDir="." redirectStderr="false" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="2" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true" dpiAware="true" amd64="true">
     <messageSet />
     <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" companyName="" productVersion="" />
   </executable>
@@ -23,7 +23,7 @@
       <envVar name="JDK_HOME" />
     </searchSequence>
     <classPath>
-      <archive location="D:/Lichee/Desktop/releases/geopark-web-0.0.1-SNAPSHOT.jar" failOnError="false" />
+      <archive location="C:/Lichee/Develop/workspace/IdeaProjects/kkth-web/target/kkth-web-0.0.1-SNAPSHOT.jar" failOnError="false" />
     </classPath>
     <modulePath />
     <nativeLibraryDirectories />
