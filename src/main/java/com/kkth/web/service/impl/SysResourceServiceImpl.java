@@ -1,0 +1,76 @@
+package com.kkth.web.service.impl;
+
+import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.kkth.framework.converter.BeanConverter;
+import com.kkth.framework.enums.AuthTypeEnum;
+import com.kkth.web.mapper.SysResourceMapper;
+import com.kkth.web.model.entity.SysResource;
+import com.kkth.web.model.vo.ResourcePermVo;
+import com.kkth.web.service.SysResourceService;
+import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+/**
+ * <p>
+ * 资源表 服务实现类
+ * </p>
+ *
+ * @author lichee
+ * @since 2019-07-31
+ */
+@Service
+public class SysResourceServiceImpl extends ServiceImpl<SysResourceMapper, SysResource> implements SysResourceService {
+
+    @Override
+    public List<ResourcePermVo> getResourcePerms(String method) {
+        List<SysResource> list = query().select("method", "mapping").eq("method",method).list();
+        return BeanConverter.convert(ResourcePermVo.class, list);
+    }
+
+    @Override
+    public List<ResourcePermVo> getOpenPerms() {
+        return getPerms(AuthTypeEnum.OPEN);
+    }
+
+    @Override
+    public List<ResourcePermVo> getPerms(AuthTypeEnum... authTypes) {
+        List<SysResource> list = lambdaQuery().select(SysResource::getMethod, SysResource::getMapping).in(ArrayUtils.isNotEmpty(authTypes), SysResource::getAuthType, (Object[]) authTypes).list();
+
+        return BeanConverter.convert(ResourcePermVo.class, list);
+    }
+
+    @Override
+    public List<ResourcePermVo> getUserMenuResourcePerms(Integer id) {
+        return baseMapper.getUserMenuResourcePerms(id);
+    }
+
+
+    @Override
+    public List<String> getUserPerms(Integer id) {
+        return getUserResourcePerms(id).stream().map(e -> this.getResourcePermTag(e.getMethod(), e.getMapping())).collect(Collectors.toList());
+    }
+
+    @Override
+    public String getResourcePermTag(String method, String mapping) {
+        return method + ":" + mapping;
+    }
+
+
+    @Override
+    public Set<ResourcePermVo> getUserResourcePerms(Integer uid) {
+        //查询权限（登录、开放）
+        List<ResourcePermVo> perms = getPerms(AuthTypeEnum.OPEN, AuthTypeEnum.LOGIN);
+        //查询权限（需要鉴定是否包含权限）
+        List<ResourcePermVo> resourcePerms = baseMapper.getUserResourcePerms(uid);
+        //查询菜单权限
+        List<ResourcePermVo> userMenuResourcePerms = getUserMenuResourcePerms(uid);
+        perms.addAll(resourcePerms);
+        perms.addAll(userMenuResourcePerms);
+        return new HashSet<>(perms);
+    }
+}

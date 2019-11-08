@@ -1,0 +1,68 @@
+package com.kkth.web.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.kkth.framework.enums.StatusEnum;
+import com.kkth.web.model.entity.SysMenu;
+import com.kkth.web.model.vo.MenuTreeVo;
+import com.kkth.web.model.vo.MenuVo;
+import org.springframework.http.HttpStatus;
+
+import java.util.List;
+
+/**
+ * <p>
+ * 菜单表 服务类
+ * </p>
+ *
+ * @author lichee
+ * @since 2019-07-31
+ */
+public interface SysMenuService extends IService<SysMenu> {
+
+    /**
+     * 获取用户权限菜单
+     *
+     * @param uid
+     * @return
+     */
+    List<MenuTreeVo> getUserPermMenus(Integer uid);
+
+    /**
+     * 修改菜单状态
+     *
+     * @param id
+     * @param status
+     */
+    void updateStatus(Integer id, StatusEnum status);
+
+    /**
+     * 获取菜单详情
+     *
+     * @param menuId
+     * @return
+     */
+    MenuVo getMenuVoDetails(Integer menuId);
+
+    /**
+     * 保存菜单
+     *
+     * @param menu
+     * @param resourceIds
+     */
+    void saveMenu(SysMenu menu, List<String> resourceIds);
+
+    /**
+     * 修改菜单
+     *
+     * @param menu
+     * @param resourceIds
+     */
+    void updateMenu(SysMenu menu, List<String> resourceIds);
+
+    /**
+     * 递归删除菜单
+     *
+     * @param menuId
+     */
+    void removeMenu(Integer menuId);
+}
