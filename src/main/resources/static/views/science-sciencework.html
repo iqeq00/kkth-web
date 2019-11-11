@@ -74,7 +74,6 @@
     <div class="layui-tab-content">
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
-            <input type="hidden" id="url" name="url"/>
             <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">公园编号</label>
@@ -138,11 +137,26 @@
                 </div>
             </div>
 
+            <input type="hidden" id="img" name="img"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">照片</label>
+                <div class="layui-input-block">
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
+                        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:10px;">
+                            预览图：
+                            <div class="layui-upload-list upload-list"></div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="url" name="url"/>
             <div class="layui-form-item">
                 <label class="layui-form-label">文件</label>
                 <div class="layui-input-block">
                     <div class="layui-upload">
-                        <button type="button" class="layui-btn" id="uploadBtn">文件上传</button>
+                        <button type="button" class="layui-btn" id="uploadFile">文件上传</button>
                         <div class="layui-upload-list">
                             <table class="layui-table">
                                 <thead>

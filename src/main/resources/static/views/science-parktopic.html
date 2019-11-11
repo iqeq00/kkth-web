@@ -79,7 +79,7 @@
     <div class="layui-tab-content">
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
-            <input type="hidden" id="url" name="url"/>
+
             <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">公园编号</label>
@@ -101,7 +101,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">报告名称</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="descLength" id= "descLength"  lay-verify="required" maxlength="180" placeholder="报告名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="reportname" id= "descLength"  lay-verify="required" maxlength="180" placeholder="报告名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
@@ -176,6 +176,7 @@
                 </div>
             </div>
 
+            <input type="hidden" id="url" name="url"/>
             <div class="layui-form-item">
                 <label class="layui-form-label">文件</label>
                 <div class="layui-input-block">

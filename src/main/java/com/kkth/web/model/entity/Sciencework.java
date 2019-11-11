@@ -85,4 +85,10 @@ public class Sciencework implements Serializable {
      */
     private String url;
 
+    /**
+     * 照片
+     */
+    private String img;
+
+
 }
