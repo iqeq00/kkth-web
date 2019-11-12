@@ -20,12 +20,12 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'element'], f
         parseData: config.parseData,
         response: config.response,
         cols: [[
-            {field: 'orgCode', align: 'center', sort: true, title: '组织机构代码'},
-            {field: 'legalPerson', align: 'center', sort: true, title: '法人代表'},
+            {field: 'orgCode', align: 'center', sort: true, title: '管理机构编号'},
+            {field: 'legalPerson', align: 'center', sort: true, title: '负责人'},
             {field: 'tenure', align: 'center', sort: true, title: '在任年限'},
             {field: 'securitySupervisor', align: 'center', sort: true, title: '安全责任人'},
             {field: 'mobile', align: 'center', sort: true, title: '安全责任人电话'},
-            {field: 'staffer', align: 'center', sort: true, title: '在编职工'},
+            {field: 'staffer', align: 'center', sort: true, title: '主要工作人员'},
             {field: 'contact', align: 'center', sort: true, title: '公园联系电话'},
             {fixed: 'right', title: '操作', toolbar: '#bar', width: 180}
         ]]
