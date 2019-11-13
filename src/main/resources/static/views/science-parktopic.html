@@ -81,7 +81,7 @@
             <input type="hidden" id="id" name="id"/>
 
             <div class="layui-form-item">
-                <div class="layui-col-md6">
+                <div class="layui-col-md12">
                     <label class="layui-form-label">公园编号</label>
                     <div class="layui-input-inline" style="width: 260px">
                         <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
@@ -90,13 +90,23 @@
                         </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">报告编号</label>
                     <div class="layui-input-inline" style="width: 260px">
                         <input type="text" name="reportnumber" id= "reportnumber" maxlength="180" placeholder="报告编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">成果编号</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="resultNumber" maxlength="180" placeholder="成果编号" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
             </div>
+
             <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">报告名称</label>
@@ -144,6 +154,12 @@
                     <label class="layui-form-label">主题词</label>
                     <div class="layui-input-inline" style="width: 260px">
                         <input type="text" name="theme" id= "theme" maxlength="180" placeholder="主题词" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">所属项目</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="project" maxlength="256" placeholder="所属项目" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

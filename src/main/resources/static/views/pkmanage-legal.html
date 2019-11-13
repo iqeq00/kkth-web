@@ -80,19 +80,28 @@
             <input type="hidden" id="id" name="id"/>
             <input type="hidden" id="url" name="url"/>
             <div class="layui-form-item">
-                <div class="layui-col-md6">
+                <div class="layui-col-md12">
                     <label class="layui-form-label">公园编号</label>
-                    <div class="layui-input-inline" style="width: 220px">
+                    <div class="layui-input-inline" style="width: 600px">
                         <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
                             <option value="">请选择</option>
                             <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
                         </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">文件编号</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <input type="text" name="number" id= "number"  lay-verify="required" maxlength="180" placeholder="文件编号" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">统一编号</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="uniformNumber" lay-verify="required" maxlength="256" placeholder="统一编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

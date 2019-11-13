@@ -98,4 +98,13 @@ public class Parktopic implements Serializable {
      */
     private String url;
 
+    /**
+     * 成果编号
+     */
+    private String resultNumber;
+
+    /**
+     * 所属项目
+     */
+    private String project;
 }

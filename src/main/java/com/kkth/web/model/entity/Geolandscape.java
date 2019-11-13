@@ -144,4 +144,12 @@ public class Geolandscape implements Serializable {
     @ExcelProperty(value = "照片",index = 18)
     private String img;
 
+    @ExcelIgnore
+    private String width;
+
+    @ExcelIgnore
+    private String height;
+
+    @ExcelIgnore
+    private String length;
 }

@@ -77,4 +77,9 @@ public class Legal implements Serializable {
      * 存储地址
      */
     private String url;
+
+    /**
+     * 统一编号
+     */
+    private String uniformNumber;
 }
