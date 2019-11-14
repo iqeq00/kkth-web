@@ -39,7 +39,7 @@ public class FileUpload {
 			String fileName = null;
 			if (!file.isEmpty()) {
 				File savedir = mkDirs(fileFolder);
-				fileName = getFileName()+ file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+				fileName = getFileName() + "-" + file.getOriginalFilename();
 				File saveFile = new File(savedir, fileName);
 				FileUtils.copyInputStreamToFile(file.getInputStream(), saveFile);
 			}

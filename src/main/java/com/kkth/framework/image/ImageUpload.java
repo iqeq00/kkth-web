@@ -89,7 +89,8 @@ public class ImageUpload {
 			String fileName = null;
 			if (!file.isEmpty()) {
 				File savedir = mkDirs(fileFolder);
-				fileName = imageScale.getImageName() + "." + imageScale.contentType;
+//				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename().substring(0,file.getOriginalFilename().lastIndexOf(".")) + "." + imageScale.contentType;
+				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename();
 				File saveFile = new File(savedir, fileName);
 				FileUtils.copyInputStreamToFile(file.getInputStream(), saveFile);
 			}
