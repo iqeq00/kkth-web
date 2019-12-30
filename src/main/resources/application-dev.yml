@@ -3,7 +3,7 @@ spring:
   datasource:
     url: jdbc:p6spy:mysql://127.0.0.1:3306/kkth?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL
     username: root
-    password: root
+    password: lichee
 #  redis:
 #    port: 6379
 #    host: 172.16.254.16
